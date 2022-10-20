@@ -63,7 +63,18 @@ func SumNumbers[K comparable, V Number](m map[K]V) V {
 	return s
 }
 
+type mesin[C int64, T float64] struct {
+	Data C
+}
+
+func (m mesin[C, T]) Upgrade(in C) T {
+	return 1.1
+}
+
 func main() {
+
+	msn := &mesin[int64, float64]{Data: 2}
+	fmt.Println(msn.Upgrade(2))
 
 	m := machine[int64]{Data: 100}
 	fmt.Println(m)
